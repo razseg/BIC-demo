@@ -4,9 +4,9 @@ import SOAR_alg as soar
 import networkx as nx
 import SMC_alg as smc
 import pi_tilde_alg as tilde
-import path_alg as p_alg
+# import path_alg as p_alg
 import delay_clac as delay_c
-import PiT_modifide as Pit_m
+# import PiT_modifide as Pit_m
 import numpy as np
 from networkx.drawing.nx_agraph import graphviz_layout
 import random
