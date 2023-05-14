@@ -12,6 +12,16 @@ from networkx.drawing.nx_agraph import graphviz_layout
 import random
 # import Delay as dly
 import copy
+import ast
+def loadTofile(load,fileName):
+    with open(fileName, "w") as file:
+        for tup in load:
+            file.write(str(tup[0]) + "," + str(tup[1]) + "\n")
+def readLoadFromfile(fileName):
+    with open(fileName, "r") as file:
+        data_str = file.read()
+    load = ast.literal_eval(data_str)
+    return load
 
 def colorMap(gr):
     color_map = []
@@ -96,6 +106,11 @@ def get_blue_ndes(g):
             b.append(n)
     # print("Blue nodes: " + str(b))
     return b
+def Blue_Nodes_to_File(g,file):
+    blueList = get_blue_ndes(g)
+    with open(file, "w") as file:
+        for item in blueList:
+            file.write(str(item) + "\n")
 def getCongestion(g):
     c=[]
     e_list = list(g.edges)
